@@ -10,5 +10,5 @@ public interface JsonFactory {
      * @param obj The Object that will be parsed to JSON String
      * @return The JSON String of obj
      */
-    public String toJson(Object obj);
+    String toJson(Object obj);
 }

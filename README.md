@@ -7,3 +7,4 @@ This project uses Java 17 & Spring 2.7 and was initialized with https://start.sp
 - Webserver: Tomcat
 - Database: MySQL
 - Documentation: Swagger (springdoc-openapi)
+- Logging: SLF4J (Abstraction) & Log4j (Specific login implementation)
