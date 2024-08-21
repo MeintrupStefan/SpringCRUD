@@ -1,13 +1,19 @@
 # SpringCRUD
 A collection of spring CRUD operations for later reference.
 
-This project uses Java 17, Spring 2.7 & Swagger and was initialized with https://start.spring.io/.
+This project uses Java 17, Spring 2.7, Maven & Swagger and was initialized with https://start.spring.io/.
 
 ### All endpoints with doc
 - Swagger Ui doc: http://localhost:8080/swagger-ui.html
 
+### Run project
+- Import repo
+- Build maven project
+- Run SpringcrudApplication.java (located in src.main.java.com.meintrup.springcrud.SpringcrudApplication)
+
 ### Dependencies
 - Java 17
+- Maven
 - Spring 2.7
 - Spring Boot
 - Documentation: Swagger (springdoc-openapi)
@@ -33,5 +39,6 @@ This project uses Java 17, Spring 2.7 & Swagger and was initialized with https:/
 - [ ] Implement patch endpoint
 - [ ] Implement websocket
 - [ ] Implement stream
+- [ ] Check all TODOs
 - [ ] CI/CD
 - [ ] Deploy in docker container
