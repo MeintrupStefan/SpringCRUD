@@ -7,9 +7,7 @@ import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -23,7 +21,6 @@ public class FriendsController {
         this.jsonFactory = jsonFactory;
     }
 
-    // TODO: Implement controller advice
     @GetMapping("/friends/of")
     @Operation(summary = "Returns a list of names that the specific user is friends with", responses = {
             @ApiResponse(responseCode = "200", description = "Okay", content = @Content(
@@ -34,7 +31,8 @@ public class FriendsController {
             @ApiResponse(responseCode = "500", description = "Server Error", content = @Content)
     })
     public String getFriends(@RequestParam String userId) {
-        log.info("Requesting friends of {}", userId);
+        // TODO: Assert userId format
+        log.debug("Requesting friends of {}", userId);
         ArrayList<String> friends = new ArrayList<>();
         friends.add("Timmy");
         friends.add("Julia");
