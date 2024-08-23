@@ -30,6 +30,28 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!--	Security start	-->
+		<!--	Auth Filter <-> Auth Manager <-> Auth provider <-> UserDetailsService	-->
+		<!--	Security Context-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!--    Security end	-->
+
+		<!--	Database start  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!--	For in memory db -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!--	Database end  -->
+
 		<!--	Logging	start	-->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -61,6 +83,7 @@
 			<scope>runtime</scope>
 		</dependency>
 		<!--	Logging	end -->
+
 		<!--	Docs start -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -68,12 +91,26 @@
 			<version>RELEASE</version>
 		</dependency>
 		<!--	Docs end -->
+
+		<!-- Database start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- Database end -->
+
 		<!--	Data parsing start -->
 		<dependency>
 		<groupId>com.google.code.gson</groupId>
 		<artifactId>gson</artifactId>
 		</dependency>
 		<!--	Data parsing end -->
+
 		<!--	Rest of Spring start -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

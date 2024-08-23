@@ -31,12 +31,13 @@ This project uses Java 17, Spring 2.7, Maven & Swagger and was initialized with 
 - [x] Create Unit test (JUnit5)
 - [x] Add aspect for endpoint error handling
 - [x] Write integration test to test error handling aspect for an endpoint, especially 400 on missing attributes & missing endpoint
-- [ ] Implement an interchangeable db connection that (first) does not require a running server
-- [ ] Implement Repository to store user data in db
-- [ ] Implement authentication
-- [ ] Implement endpoints that store user data in db
+- [x] Implement an interchangeable db connection that (first) does not require a running db server
+- [x] Implement Repository to store user data in db
+- [x] Implement endpoints that store user data in db
 - [ ] Implement delete endpoint
 - [ ] Implement patch endpoint
+- [ ] Implement MySql DB Connection And DB table
+- [ ] Implement authentication
 - [ ] Implement websocket
 - [ ] Implement communication between two micro services
 - [ ] CI/CD

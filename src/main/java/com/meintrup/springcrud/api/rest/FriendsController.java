@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,7 @@ import java.util.UUID;
 
 @RestController
 @Slf4j
+@RequestMapping("/api/v1/friends")
 public class FriendsController {
     private final JsonFactory jsonFactory;
 
@@ -26,7 +28,7 @@ public class FriendsController {
         this.jsonFactory = jsonFactory;
     }
 
-    @GetMapping("/friends/of")
+    @GetMapping("/of")
     @Operation(summary = "Returns a list of names that the specific user is friends with", responses = {
             @ApiResponse(responseCode = "200", description = "Okay", content = @Content(
                     mediaType = "application/json",
