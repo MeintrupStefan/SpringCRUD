@@ -7,9 +7,14 @@ import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 @RestController
 @Slf4j
@@ -30,13 +35,24 @@ public class FriendsController {
             @ApiResponse(responseCode = "400", description = "Bad request", content = @Content),
             @ApiResponse(responseCode = "500", description = "Server Error", content = @Content)
     })
-    public String getFriends(@RequestParam String userId) {
-        // TODO: Assert userId format
+    public ResponseEntity<String> getFriends(@RequestParam String userId) {
         log.debug("Requesting friends of {}", userId);
+        UUID userOfInterestUUID;
+        try {
+            // Check for valid input params.
+            userOfInterestUUID = UUID.fromString(userId);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        // TODO: Implement authentication
+        // TODO: Get data from repository / db
         ArrayList<String> friends = new ArrayList<>();
         friends.add("Timmy");
         friends.add("Julia");
         friends.add("Peter");
-        return jsonFactory.toJson(friends);
+        return new ResponseEntity<>(
+                jsonFactory.toJson(friends),
+                HttpStatus.OK
+        );
     }
 }
