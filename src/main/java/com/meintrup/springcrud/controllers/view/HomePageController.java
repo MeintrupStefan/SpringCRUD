@@ -1,4 +1,4 @@
-package com.meintrup.springcrud.api.view;
+package com.meintrup.springcrud.controllers.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,5 +1,7 @@
 package com.meintrup.springcrud.util;
 
+import java.util.Map;
+
 /**
  * An interface exposing json conversion functions.
  */
@@ -11,4 +13,5 @@ public interface JsonFactory {
      * @return The JSON String of obj
      */
     String toJson(Object obj);
+
 }

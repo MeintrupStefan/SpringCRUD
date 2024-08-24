@@ -1,4 +1,4 @@
-package com.meintrup.springcrud.api.rest;
+package com.meintrup.springcrud.controllers.rest;
 
 import com.meintrup.springcrud.entities.Person;
 import com.meintrup.springcrud.services.PersonService;

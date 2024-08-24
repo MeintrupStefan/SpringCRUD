@@ -1,4 +1,4 @@
-package com.meintrup.springcrud.api.rest;
+package com.meintrup.springcrud.controllers.rest;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

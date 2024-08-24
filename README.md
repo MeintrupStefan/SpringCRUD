@@ -36,8 +36,9 @@ This project uses Java 17, Spring 2.7, Maven & Swagger and was initialized with 
 - [x] Implement endpoints that store user data in db
 - [ ] Implement delete endpoint
 - [ ] Implement patch endpoint
+- [ ] Implement post endpoint 
 - [ ] Implement MySql DB Connection And DB table
-- [ ] Implement authentication
+- [x] Implement authentication
 - [ ] Implement websocket
 - [ ] Implement communication between two micro services
 - [ ] CI/CD

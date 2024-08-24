@@ -1,4 +1,4 @@
-package com.meintrup.springcrud.api.rest;
+package com.meintrup.springcrud.controllers.rest;
 
 import com.meintrup.springcrud.util.JsonFactory;
 import io.swagger.v3.oas.annotations.Operation;
