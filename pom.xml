@@ -44,6 +44,14 @@
 		</dependency>
 		<!--    Security end	-->
 
+		<!--	Consuming Rest endpoints start -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<version>3.1.9</version>
+		</dependency>
+		<!--	Consuming Rest endpoints end -->
+
 		<!--	Database start  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

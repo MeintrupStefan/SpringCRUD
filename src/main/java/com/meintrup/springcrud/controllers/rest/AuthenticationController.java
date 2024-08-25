@@ -1,5 +1,6 @@
 package com.meintrup.springcrud.controllers.rest;
 
+import com.meintrup.springcrud.entities.ErrorDetails;
 import com.meintrup.springcrud.security.AuthenticationRequest;
 import com.meintrup.springcrud.security.JwtUtils;
 import com.meintrup.springcrud.util.JsonFactory;
@@ -40,7 +41,7 @@ public class AuthenticationController {
             @ApiResponse(responseCode = "400", description = "Bad request", content = @Content),
             @ApiResponse(responseCode = "500", description = "Server Error", content = @Content)
     })
-    public ResponseEntity<String> authenticate(
+    public ResponseEntity<?> authenticate(
             @RequestBody AuthenticationRequest request
     ) {
         authenticationManager.authenticate(
@@ -57,7 +58,9 @@ public class AuthenticationController {
                     )
             );
         }
-        return ResponseEntity.badRequest().body("Could not authenticate user.");
+        return ResponseEntity.badRequest().body(
+                new ErrorDetails("Could not find user in db.")
+        );
     }
 }
 

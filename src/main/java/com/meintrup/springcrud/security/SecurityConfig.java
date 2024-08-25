@@ -1,6 +1,5 @@
 package com.meintrup.springcrud.security;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -29,6 +28,8 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    public static String[] SWAGGER_URL_PATHS = new String[] { "/swagger-ui.html", "/swagger-ui/index.html", "/swagger-resources/**",
+            "/v3/api-docs/**", "/v3/api-docs**", "/v2/api-docs**", "/webjars/**", "/swaggerfox.js", "/swagger-ui/**" };
     /**
      * The user list is hardcoded here. We can just as well use a database for that & hence be able
      * to create new users.
@@ -60,11 +61,13 @@ public class SecurityConfig {
      */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // TODO do not disable csrf, but configure it
+        // csrf can be disabled for non browser access.
         http.csrf()
             .disable()
             .authorizeRequests()
             .antMatchers("/**/auth/**")
+            .permitAll()
+            .antMatchers(SWAGGER_URL_PATHS)
             .permitAll()
             .anyRequest()
             .authenticated()
