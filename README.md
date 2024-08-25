@@ -20,7 +20,8 @@ This project uses Java 17, Spring 2.7, Maven & Swagger and was initialized with 
 - Webserver: Tomcat
 - Logging: SLF4J (Abstraction) & Log4j (Specific login implementation)
 - Annotations: Lombok
-- Database:
+- Data access: ORM (Hibernate)
+- Database: H2 in memory
 
 
 ### Road Map
@@ -35,14 +36,10 @@ This project uses Java 17, Spring 2.7, Maven & Swagger and was initialized with 
 - [x] Implement Repository to store user data in db
 - [x] Implement endpoints that store user data in db
 - [x] Implement post endpoint
-- [ ] Spring start here keep reading from 237
+- [x] Consume Rest endpoints using OpenFeign
 - [ ] Implement delete endpoint
 - [ ] Implement patch endpoint
-- [ ] Implement MySql DB Connection And DB table
 - [x] Implement authentication
 - [ ] Implement websocket
-- [ ] Implement communication between two micro services
-- [ ] CI/CD
-- [ ] Implement stream
 - [ ] Check all TODOs
-- [ ] Deploy in docker container
+- [ ] CI/CD
